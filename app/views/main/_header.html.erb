@@ -1,0 +1,22 @@
+<div class="inline logo">
+<%= image_tag "cpr_logo.png" %>
+</div>
+
+<div class="inline header_right">
+	<div id="nav_cell_underline">
+			<nav>
+				<ul>
+					<li><%= link_to "Home", root_path, :class => current_page?(action: 'index') ? "current" : "" %></li>
+					<li><%= link_to "About us", about_path, :class => current_page?(action: 'about') ? "current" : ""  %></li>
+					<li><%= link_to 'Past events', past_path, :class => current_page?(action: 'past') ? "current" : ""   %></li>
+					<li><%= link_to "Directions", directions_path, :class => current_page?(action: 'directions') ? "current" : ""  %></li>
+				</ul>	
+			</nav>
+	</div>
+	<div class="video">
+			<iframe width="480" height="270" src="https://www.youtube.com/embed/Mfv34jBeYjY" frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
+
+<div class="bottom_border">
+</div>

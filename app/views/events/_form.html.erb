@@ -1,0 +1,57 @@
+<%= form_for @event do |f| %>
+
+	<% if @event.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@event.errors.count, "error") %>
+				prohibited this event from being saved:
+			</h2>
+			<ul>
+				<% @event.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :lecture %><br>
+		<%= f.text_area :lecture %>
+	</p>
+
+	<p>
+		<%= f.label :meal %><br>
+		<%= f.text_area :meal %>
+	</p>
+
+	<p>
+		<%= f.label :side %><br>
+		<%= f.text_area :side %>
+	</p>
+
+	<p>
+		<%= f.label :date %><br>
+		<%= f.date_field :date %>
+	</p>
+
+	<p>
+		<%= f.label :lecture_link %><br>
+		<%= f.text_area :lecture_link%>
+	</p>
+
+	<p>
+		<%= f.label :testimony %><br>
+		<%= f.text_area :testimony %>
+	</p>
+
+	<p>
+		<%= f.label :testimony_link %><br>
+		<%= f.text_area :testimony_link %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', events_path %>

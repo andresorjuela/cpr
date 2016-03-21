@@ -1,0 +1,93 @@
+		
+<h2>Past events</h2>
+
+
+<% @events.each do |event| %>
+<%= event.date.to_formatted_s(:long_ordinal) %>
+
+<h4>
+	<%= @date %>
+</h4>
+
+<table>
+
+		<tr>
+
+			<th class="past_topic">
+				Topic:
+			</th>
+
+			<th>
+				Lecture Video
+			</th>		
+
+			<th>
+				Testimony Video
+			</th>
+
+		</tr>
+
+		<tr>
+
+			<td class="past_topic">
+				<%= event.lecture %>
+			</td>
+			
+			<td class="table_padding">
+				<div class="video_past">
+					<iframe width="240" height="135" src="<%= event.lecture_link %>" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</td>
+
+			<td class="table_padding">
+				<div class="video_past">
+					<iframe width="240" height="135" src="<%= event.testimony_link %>" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</td>
+
+		</tr>
+
+		<tr>
+			<td>
+				<%= link_to 'See full event', event_path(event) %>
+			</td>
+		</tr>
+
+	<% end %>
+	
+</table>
+<br>
+<br>
+
+<%= link_to 'Login', events_path %>
+<br><br>
+
+<!--
+<table>
+	<tr>
+		<th>Lecture</th>
+		<th>Meal</th>
+		<th>Side</th>
+		<th>Date</th>
+		<th>Lecture Link</th>
+		<th>Testimony</th>
+		<th>Testimony Link</th>
+		<th colspan="2"></th>
+	</tr>
+
+	<% @events.each do |event| %>
+		<tr>
+			<td><%= event.lecture %></td>
+			<td><%= event.meal %></td>
+			<td><%= event.side %></td>
+			<td><%= event.date%></td>
+			<td><%= event.lecture_link%></td>
+			<td><%= event.testimony %></td>
+			<td><%= event.testimony_link %></td>
+			<td><%= link_to 'Show', event_path(event) %></td>
+		</tr>
+	<% end %>
+
+		
+</table>
+-->

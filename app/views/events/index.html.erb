@@ -1,0 +1,37 @@
+<h1>Past events</h1>
+
+<table>
+	<tr>
+		<th>Lecture</th>
+		<th>Meal</th>
+		<th>Side</th>
+		<th>Date</th>
+		<th>Lecture Link</th>
+		<th>Testimony</th>
+		<th>Testimony Link</th>
+		<th colspan="2"></th>
+	</tr>
+
+	<% @events.each do |event| %>
+		<tr>
+			<td><%= event.lecture %></td>
+			<td><%= event.meal %></td>
+			<td><%= event.side %></td>
+			<td><%= event.date %></td>
+			<td><%= event.lecture_link %></td>
+			<td><%= event.testimony %></td>
+			<td><%= event.testimony_link %></td>
+			<td><%= link_to 'Show', event_path(event) %></td>
+			<td><%= link_to 'Edit', edit_event_path(event) %></td>
+			<td><%= link_to 'Delete', event_path(event), method: :delete, data: {confirm: 'Are you sure you want to delete this event?' }  %></td>
+		</tr>
+	<% end %>
+
+	
+	
+</table>
+
+<%= link_to 'New event', new_event_path %>
+<%= link_to 'Logout', root_path %>
+
+

@@ -1,0 +1,45 @@
+<h1>Show lecture:</h1>
+
+<p>
+	<strong>Lecture:</strong>
+	<%= @event.lecture %>
+</p>
+
+<p>
+	<strong>Meal:</strong>
+	<%= @event.meal %>
+</p>
+
+<p>
+	<strong>Side:</strong>
+	<%= @event.side %>
+</p>
+
+<p>
+	<strong>Date:</strong>
+	<%= @event.date %>
+</p>
+
+<p>
+	<strong>Lecture Link:</strong>
+	<%= @event.lecture_link %>
+</p>
+
+<p>
+	<strong>Testimony:</strong>
+	<%= @event.testimony %>
+</p>
+
+<p>
+	<strong>Testimony Link:</strong>
+	<%= @event.testimony_link %>
+</p>
+
+<h2>Recipes</h2>
+<%= render @event.recipes %>
+
+<h2>Add a recipe:</h2>
+<%= render 'recipes/form' %>
+
+<%= link_to 'Edit', edit_event_path(@event) %>
+<%= link_to 'Back', events_path %>
