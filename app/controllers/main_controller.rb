@@ -2,8 +2,13 @@ class MainController < ApplicationController
 
   def index
     @event = Event.last
+    
+    if @event
 
-    @date = @event.date.to_formatted_s(:long_ordinal) #fomats as March 13th, 2016
+      @date = @event.date.to_formatted_s(:long_ordinal) #fomats as March 13th, 2016
+    else
+      @date = Date.today
+    end
 
     @calculateDate = Date.parse(@date) #turns it into ruby date object to work with
     @process = @calculateDate -= 2 #subtracts 2 days from it
