@@ -7,7 +7,7 @@ class MainController < ApplicationController
 
       @date = @event.date.to_formatted_s(:long_ordinal) #fomats as March 13th, 2016
     else
-      @date = Date.today
+      @date = Date.today.to_formatted_s
     end
 
     @calculateDate = Date.parse(@date) #turns it into ruby date object to work with
