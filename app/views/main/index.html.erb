@@ -5,7 +5,7 @@
 
 <div class="event_info">
 	<h2 class="topic">
-		Topic:  <%= @event.lecture %>
+		Topic:  <%= @event.try(:lecture) %>
 		<br>
 	</h2>
 
@@ -13,7 +13,7 @@
 		<div class="bold">
 			Fellowship meal
 		</div>
-		Main Course: <%= @event.meal %> / Side: <%= @event.side %>
+		Main Course: <%= @event.try(:meal) %> / Side: <%= @event.try(:side) %>
 		<br><br>
 		<div class="bold">
 			RSVP by Friday <%= @rsvpdate %>
